@@ -101,15 +101,11 @@
 		7DAA6399212603E900BA582F /* Github Repos */ = {
 			isa = PBXGroup;
 			children = (
-				7DAA639A212603E900BA582F /* AppDelegate.h */,
-				7DAA639B212603E900BA582F /* AppDelegate.m */,
-				7DAA639D212603E900BA582F /* ViewController.h */,
-				7DAA639E212603EA00BA582F /* ViewController.m */,
-				7DAA63A0212603EA00BA582F /* Main.storyboard */,
+				7DAA63CC2126046A00BA582F /* Controller */,
+				7DAA63CD2126049600BA582F /* Storyboards */,
 				7DAA63A3212603EA00BA582F /* Assets.xcassets */,
-				7DAA63A5212603EA00BA582F /* LaunchScreen.storyboard */,
 				7DAA63A8212603EA00BA582F /* Info.plist */,
-				7DAA63A9212603EA00BA582F /* main.m */,
+				7DAA63CE212604C500BA582F /* Support Files */,
 			);
 			path = "Github Repos";
 			sourceTree = "<group>";
@@ -130,6 +126,34 @@
 				7DAA63C0212603EA00BA582F /* Info.plist */,
 			);
 			path = "Github ReposUITests";
+			sourceTree = "<group>";
+		};
+		7DAA63CC2126046A00BA582F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7DAA639D212603E900BA582F /* ViewController.h */,
+				7DAA639E212603EA00BA582F /* ViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7DAA63CD2126049600BA582F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7DAA63A0212603EA00BA582F /* Main.storyboard */,
+				7DAA63A5212603EA00BA582F /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		7DAA63CE212604C500BA582F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7DAA63A9212603EA00BA582F /* main.m */,
+				7DAA639A212603E900BA582F /* AppDelegate.h */,
+				7DAA639B212603E900BA582F /* AppDelegate.m */,
+			);
+			path = "Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
