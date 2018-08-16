@@ -15,6 +15,8 @@
 		7DAA63AA212603EA00BA582F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAA63A9212603EA00BA582F /* main.m */; };
 		7DAA63B4212603EA00BA582F /* Github_ReposTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAA63B3212603EA00BA582F /* Github_ReposTests.m */; };
 		7DAA63BF212603EA00BA582F /* Github_ReposUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAA63BE212603EA00BA582F /* Github_ReposUITests.m */; };
+		7DAA63D12126084200BA582F /* Repo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAA63D02126084200BA582F /* Repo.m */; };
+		7DAA63D52126134400BA582F /* RepoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAA63D42126134400BA582F /* RepoTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		7DAA63BA212603EA00BA582F /* Github ReposUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Github ReposUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DAA63BE212603EA00BA582F /* Github_ReposUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Github_ReposUITests.m; sourceTree = "<group>"; };
 		7DAA63C0212603EA00BA582F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DAA63CF2126084200BA582F /* Repo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Repo.h; sourceTree = "<group>"; };
+		7DAA63D02126084200BA582F /* Repo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Repo.m; sourceTree = "<group>"; };
+		7DAA63D32126134400BA582F /* RepoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RepoTableViewCell.h; sourceTree = "<group>"; };
+		7DAA63D42126134400BA582F /* RepoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RepoTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,8 @@
 		7DAA6399212603E900BA582F /* Github Repos */ = {
 			isa = PBXGroup;
 			children = (
+				7DAA63D22126084700BA582F /* Model */,
+				7DAA63D62126134B00BA582F /* View */,
 				7DAA63CC2126046A00BA582F /* Controller */,
 				7DAA63CD2126049600BA582F /* Storyboards */,
 				7DAA63A3212603EA00BA582F /* Assets.xcassets */,
@@ -154,6 +162,24 @@
 				7DAA639B212603E900BA582F /* AppDelegate.m */,
 			);
 			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		7DAA63D22126084700BA582F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7DAA63CF2126084200BA582F /* Repo.h */,
+				7DAA63D02126084200BA582F /* Repo.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7DAA63D62126134B00BA582F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7DAA63D32126134400BA582F /* RepoTableViewCell.h */,
+				7DAA63D42126134400BA582F /* RepoTableViewCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +315,8 @@
 				7DAA639F212603EA00BA582F /* ViewController.m in Sources */,
 				7DAA63AA212603EA00BA582F /* main.m in Sources */,
 				7DAA639C212603E900BA582F /* AppDelegate.m in Sources */,
+				7DAA63D12126084200BA582F /* Repo.m in Sources */,
+				7DAA63D52126134400BA582F /* RepoTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

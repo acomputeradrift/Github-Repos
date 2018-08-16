@@ -8,7 +8,13 @@
 
 #import "ViewController.h"
 
+
+
+
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet UITableView *UITableView;
+
 
 @end
 
@@ -16,8 +22,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
+    self.myRepo = [[NSMutableArray alloc] init];
+    [self getDataFromUrlAndParse];
+}
+
+- (void) getDataFromUrlAndParse{
     NSURL *url = [NSURL URLWithString:@"https://api.github.com/users/acomputeradrift/repos"]; // 1
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url]; // 2
     
@@ -33,7 +42,8 @@
         }
         
         NSError *jsonError = nil;
-        NSArray *repos = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError]; // 2
+        NSArray *repos = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+        //self.repos = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];// 2
         
         if (jsonError) { // 3
             // Handle the error
@@ -42,22 +52,37 @@
         }
         
         // If we reach this point, we have successfully retrieved the JSON from the API
-        for (NSDictionary *repo in repos) { // 4
+        for (NSDictionary *repo in repos){ // 4
             
             NSString *repoName = repo[@"name"];
             NSLog(@"repo: %@", repoName);
+            //create repo object
+            Repo *repo = [[Repo alloc] init];
+            repo.name = repoName;
+            [self.myRepo addObject:repo];
         }
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [self.UITableView reloadData];
+        }];
     }];
-
-    
     [dataTask resume]; // 6
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    RepoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TableViewCell"];
+    NSInteger row = indexPath.row;
+    Repo *repo = self.myRepo[row];
+    
+    cell.nameLabel.text = repo.name;
+    return cell;
+}
 
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.myRepo.count;
+}
 @end

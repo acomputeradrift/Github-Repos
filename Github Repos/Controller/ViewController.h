@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Repo.h"
+#import "RepoTAbleViewCell.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) NSMutableArray <Repo *> *myRepo;
 
 
 @end
